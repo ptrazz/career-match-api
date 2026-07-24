@@ -6,7 +6,6 @@ const openai = new OpenAI({
 })
 
 export default async function handler(req, res) {
-    // CORS agar Framer dapat memanggil API
     res.setHeader("Access-Control-Allow-Origin", "*")
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS")
     res.setHeader("Access-Control-Allow-Headers", "Content-Type")
@@ -17,9 +16,11 @@ export default async function handler(req, res) {
 
     if (req.method !== "POST") {
         return res.status(405).json({
-            error: "Method not allowed",
+            error: "API aktif. Gunakan POST untuk mengirim CV.",
         })
     }
+
+    // kode lainnya tetap di bawah sini
 
     try {
         // Membaca multipart/form-data
