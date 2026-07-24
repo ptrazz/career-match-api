@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/career-match.js": {
-      "maxDuration": 60
-    }
-  }
-}
